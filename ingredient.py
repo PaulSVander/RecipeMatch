@@ -14,14 +14,14 @@ class Ingredient:
         else:
             self._amount -= quantity
 
-    def set_name(self, name):
-        self._name = name
+    def set_name(self, new_name):
+        self._name = new_name
 
-    def set_quantity(self, quantity):
-        self._amount = quantity
+    def set_quantity(self, new_quantity):
+        self._amount = new_quantity
 
-    def set_units(self, units):
-        self._units = units
+    def set_units(self, new_units):
+        self._units = new_units
 
     def get_name(self):
         return self._name
