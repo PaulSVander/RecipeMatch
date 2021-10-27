@@ -1,6 +1,6 @@
 class Ingredient:
 
-    def __init__(self, name, amount, units):
+    def __init__(self, name, amount, units=None):
         self._name = name
         self._amount = amount
         self._units = units
@@ -22,4 +22,14 @@ class Ingredient:
 
     def set_units(self, units):
         self._units = units
+
+    def get_name(self):
+        return self._name
+
+    def get_amount(self):
+        return self._amount
+
+    def get_units(self):
+        return self._units
+
 
