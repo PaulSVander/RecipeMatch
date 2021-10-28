@@ -1,4 +1,5 @@
 import add_ingredient_interface
+import edit_ingredient_interface
 import home
 import ingredient
 import data
