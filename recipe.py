@@ -11,8 +11,12 @@ class Recipe:
     def set_id(self, new_id):
         self._id = new_id
 
-    def add_ingredient(self, ingredient, quantity_needed):
-        self._ingredients[ingredient] = quantity_needed
+    def get_name(self):
+        return self._name
+
+    def add_ingredient(self, ingredient, quantity_needed, units):
+        quantity_needed = str(quantity_needed)
+        self._ingredients[ingredient] = quantity_needed + units
 
     def can_make(self):
         for ingredient, quantity_needed in self._ingredients:
@@ -24,6 +28,10 @@ class Recipe:
     def make(self):
         for ingredient, quantity_needed in self._ingredients:
             ingredient.remove_quantity(quantity_needed)
+
+    def list_ingredients(self):
+        for item in self._ingredients:
+            print(item.get_name(), self._ingredients[item])
 
     def print(self):
         print(self._id, '.', self._name)

@@ -31,4 +31,4 @@ def add_ingredients(current_recipe):
         selected_ingredient = ingredients_list[selection - 1]
         quantity = input("\nEnter the quantity needed: ")
 
-        current_recipe.add_ingredient(selected_ingredient, quantity)
+        current_recipe.add_ingredient(selected_ingredient, quantity, selected_ingredient.get_units())

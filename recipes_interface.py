@@ -18,4 +18,4 @@ def display():
         display()
     else:
         from edit_recipe_interface import display
-        display(selection)
+        display(int(selection) - 1)
