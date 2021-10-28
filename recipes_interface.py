@@ -1,4 +1,4 @@
 def display():
-    print("Here are the ingredients you have on hand: ")
+    print("Here are the recipes in your book: ")
 
-    print("Select an ingredient to edit, or enter 0 to add a new ingredient: ")
+    print("Select a recipe to edit, or enter 0 to add a new ingredient: ")

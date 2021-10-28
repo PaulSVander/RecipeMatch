@@ -1,4 +1,5 @@
 import ingredients_interface
+import recipes_interface
 
 
 def display():
@@ -12,4 +13,6 @@ selection = input()
 
 if selection == 1:
     ingredients_interface.display()
+if selection == 2:
+    recipes_interface.display()
 
