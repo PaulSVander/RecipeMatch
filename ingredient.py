@@ -15,6 +15,9 @@ class Ingredient:
         else:
             self._amount -= quantity
 
+    def set_id(self, new_id):
+        self._id = new_id
+
     def set_name(self, new_name):
         self._name = new_name
 

@@ -1,23 +1,23 @@
-import add_ingredient_interface
-import edit_ingredient_interface
+# import edit_ingredient_interface
 import home
-import ingredient
-import data
+# import ingredient
+from data import ingredients_list
 
 
 def display():
     print("Here are the ingredients you have on hand: ")
-    for ingredient_id in range(1, len(data.ingredients_list)):
-        data.ingredients_list[ingredient_id].id = ingredient_id
-        data.ingredients_list[ingredient_id].print()
+    for ingredient_id in range(0, len(ingredients_list)):
+        ingredients_list[ingredient_id].set_id(ingredient_id + 1)
+        ingredients_list[ingredient_id].print()
     print("Select an ingredient to edit, or enter 'new' to add an ingredient: ")
 
+    selection = input()
 
-selection = input()
-
-if selection == 0:
-    home.display()
-elif selection == 'new':
-    add_ingredient_interface.display()
-else:
-    edit_ingredient_interface.display(selection)
+    if selection == 0:
+        home.display()
+    elif selection == 'new':
+        from add_ingredient_interface import display
+        display()
+    else:
+        from edit_ingredient_interface import display
+        display(selection)
