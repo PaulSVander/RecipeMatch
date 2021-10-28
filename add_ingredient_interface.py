@@ -1,3 +1,4 @@
+import data
 import ingredient
 import ingredients_interface
 
@@ -14,6 +15,7 @@ def display():
     if len(quantity_units) > 1:
         units = quantity_units[1]
 
-    ingredient.Ingredient(name, quantity, units)
+    new_ingredient = ingredient.Ingredient(name, quantity, units)
+    data.ingredients_list.append(new_ingredient)
 
     ingredients_interface.display()
