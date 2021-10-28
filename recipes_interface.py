@@ -2,7 +2,8 @@ from data import recipes_list
 
 
 def display():
-    print("Here are the recipes in your book: ")
+    print("Here are the recipes in your book: \n")
+    print("0. Go Back\n")
     for recipe_id in range(0, len(recipes_list)):
         recipes_list[recipe_id].set_id(recipe_id + 1)
         recipes_list[recipe_id].print()
@@ -10,7 +11,7 @@ def display():
 
     selection = input()
 
-    if selection == 0:
+    if selection == '0':
         from home import display
         display()
     elif selection == 'new':

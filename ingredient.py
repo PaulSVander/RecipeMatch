@@ -37,5 +37,5 @@ class Ingredient:
         return self._units
 
     def print(self):
-        print(self._id, ". ", self._name, '\t', self._amount, self._units)
+        print(str(self._id) + ". ", self._name, '\t', self._amount, self._units)
 

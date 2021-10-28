@@ -14,7 +14,7 @@ b.add_ingredient(y, 2, y.get_units())
 b.add_ingredient(z, 1, z.get_units())
 
 c = recipe.Recipe('soup')
-c.add_ingredient(x, 1, x.get_units())
+c.add_ingredient(x, 1245, x.get_units())
 c.add_ingredient(y, 2, y.get_units())
 c.add_ingredient(z, 3, z.get_units())
 

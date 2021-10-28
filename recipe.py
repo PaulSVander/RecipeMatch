@@ -19,8 +19,12 @@ class Recipe:
         self._ingredients[ingredient] = quantity_needed + units
 
     def can_make(self):
-        for ingredient, quantity_needed in self._ingredients:
-            if ingredient.get_amount() < quantity_needed:
+        for ingredient in self._ingredients:
+            num = ''
+            for char in self._ingredients[ingredient]:
+                if char.isdigit():
+                    num += char
+            if ingredient.get_amount() < int(num):
                 return False
 
         return True
