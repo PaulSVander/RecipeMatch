@@ -4,6 +4,7 @@ class Ingredient:
         self._name = name
         self._amount = amount
         self._units = units
+        self._id = 0
 
     def add_quantity(self, quantity):
         self._amount += quantity
@@ -13,6 +14,9 @@ class Ingredient:
             self._amount = 0
         else:
             self._amount -= quantity
+
+    def set_id(self, new_id):
+        self._id = new_id
 
     def set_name(self, new_name):
         self._name = new_name
@@ -32,4 +36,6 @@ class Ingredient:
     def get_units(self):
         return self._units
 
+    def print(self):
+        print(self._id, ". ", self._name, '\t', self._amount, self._units)
 
