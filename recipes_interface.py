@@ -2,12 +2,13 @@ from data import recipes_list
 
 
 def display():
+    print('\n---------------------------\n')
     print("Here are the recipes in your book: \n")
     print("0. Go Back\n")
     for recipe_id in range(0, len(recipes_list)):
         recipes_list[recipe_id].set_id(recipe_id + 1)
         recipes_list[recipe_id].print()
-    print("Select a recipe to edit, or enter new to add a new ingredient: ")
+    print("\nSelect a recipe to edit, or enter 'new' to add a new recipe: ")
 
     selection = input()
 
@@ -19,4 +20,4 @@ def display():
         display()
     else:
         from edit_recipe_interface import display
-        display(int(selection) - 1)
+        display(int(selection))

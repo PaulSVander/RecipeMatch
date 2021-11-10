@@ -14,6 +14,9 @@ class Recipe:
     def get_name(self):
         return self._name
 
+    def get_ingredients(self):
+        return self._ingredients
+
     def add_ingredient(self, ingredient, quantity_needed, units):
         quantity_needed = str(quantity_needed)
         self._ingredients[ingredient] = quantity_needed + units
@@ -24,7 +27,7 @@ class Recipe:
             for char in self._ingredients[ingredient]:
                 if char.isdigit():
                     num += char
-            if ingredient.get_amount() < int(num):
+            if int(ingredient.get_amount()) < int(num):
                 return False
 
         return True
@@ -38,6 +41,6 @@ class Recipe:
             print(item.get_name(), self._ingredients[item])
 
     def print(self):
-        print(self._id, '.', self._name)
+        print(str(self._id) + '.', self._name)
 
 
