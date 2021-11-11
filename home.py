@@ -11,6 +11,8 @@ def display():
         view_recipes()
     elif selection == 3:
         view_makeable()
+    elif selection == 4:
+        quit()
 
 
 def view_ingredients():
@@ -22,8 +24,7 @@ def view_recipes():
     from recipes_interface import display
     display()
 
+
 def view_makeable():
     from makeable_interface import display
     display()
-
-

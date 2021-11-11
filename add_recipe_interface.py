@@ -45,24 +45,27 @@ def add_ingredients(current_recipe):
 
         current_recipe.add_ingredient(selected_ingredient, quantity, selected_ingredient.get_units())
 
-    print("Recipe added!")
+    print("\nRecipe added!")
 
 
 def image_request(recipe):
-    print("Would you like to add an image for this recipe?")
-    print("1. Yes\n2. No")
+    print("Would you like to add an image for this recipe?\n")
+    print("1. Yes\n2. No\n")
     selection = input()
 
     if selection == '1':
+        print("Retrieving image...\n")
         image = retrieve_image(recipe.get_name())
-    else:
-        recipes_interface.display()
+        recipe.set_img_url(image)
+
+    recipes_interface.display()
 
 
 def retrieve_image(recipe_name):
     recipe_name = str(recipe_name).replace(" ", "+")
     url = "https://www.allrecipes.com/search/results/?search=" + recipe_name
 
+    # Send the page to scrape in JSON format
     message = {"URL": url}
     json_message = json.dumps(message)
     encoded_json_message = json_message.encode('utf-8')
@@ -70,14 +73,15 @@ def retrieve_image(recipe_name):
     encoded_len_str = str(encoded_msg_len).encode('utf-8')
     len_buffered = encoded_len_str + b' ' * (64 - len(encoded_len_str))
 
-
     response = scraper_connection.connect_to_scraper(len_buffered, encoded_json_message)
-    rs = response.split(',')
-    i = 0
-    for r in rs:
-        print(i, r + '\n')
-        i += 1
+    response_list = response.split(',')
 
-    print(response)
+    print("Would you like to use this image: ")
+    print(response_list[30])
+    print('\n1. Yes\n2. No')
+    selection = input()
 
-    return response
+    if selection == '1':
+        return response_list[30]
+    else:
+        return None

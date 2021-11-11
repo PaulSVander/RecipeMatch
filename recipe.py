@@ -4,12 +4,19 @@ class Recipe:
         self._name = name
         self._ingredients = {}
         self._id = 0
+        self._img_url = None
+
+    def set_img_url(self, url):
+        self._img_url = url
 
     def set_name(self, new_name):
         self._name = new_name
 
     def set_id(self, new_id):
         self._id = new_id
+
+    def get_img_url(self):
+        return self._img_url
 
     def get_name(self):
         return self._name
