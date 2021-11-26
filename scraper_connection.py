@@ -2,6 +2,11 @@ import socket
 
 
 def connect_to_scraper(msg_size, msg):
+    """
+    Receives the message containing the JSON with the url to scrape and the message indicating
+    the length of that message then sends them to the image scraper. Returns the response from the
+    image scraper.
+    """
     socket_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     port = 5050
     socket_connection.connect(('localhost', port))

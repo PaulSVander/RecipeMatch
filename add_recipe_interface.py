@@ -14,15 +14,14 @@ def display():
         recipes_interface.display()
     new_recipe = recipe.Recipe(name)
     add_ingredients(new_recipe)
-
-    recipe_image = image_request(new_recipe)
-
     recipes_list.append(new_recipe)
+
+    image_request(new_recipe)
 
     from recipes_interface import display
     display()
 
-
+# Add ingredients after selecting recipe name
 def add_ingredients(current_recipe):
     selection = ''
     while selection != 'done':
@@ -60,7 +59,7 @@ def image_request(recipe):
 
     recipes_interface.display()
 
-
+# Utilizes image scraper microservice to find image for recipe
 def retrieve_image(recipe_name):
     recipe_name = str(recipe_name).replace(" ", "+")
     url = "https://www.allrecipes.com/search/results/?search=" + recipe_name

@@ -1,6 +1,7 @@
 from data import recipes_list
 
 
+# Displays a list of what recipes the user can make based on the ingredients they have on hand
 def display():
     print('\n---------------------------\n')
     print("Here's what you can make with your current ingredients: ")
@@ -14,5 +15,3 @@ def display():
     if selection == '0':
         from home import display
         display()
-
-

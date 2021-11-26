@@ -3,7 +3,7 @@ import home
 # import ingredient
 from data import ingredients_list
 
-
+# Main ingredients interface to add or edit ingredients
 def display():
     print('\n---------------------------\n')
     print("Here are the ingredients you have on hand: \n")

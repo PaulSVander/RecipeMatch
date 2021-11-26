@@ -1,3 +1,5 @@
+
+# "home screen"
 def display():
     print("Welcome to Recipe Match!\n\n")
     print("1. View/Edit my ingredients")

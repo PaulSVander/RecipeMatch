@@ -1,3 +1,7 @@
+"""
+Holds  the list of recipes and ingredients and adds fake items to the list to make debugging easier
+"""
+
 import ingredient
 import recipe
 
@@ -23,4 +27,3 @@ c.add_ingredient(z, 3, z.get_units())
 
 ingredients_list = [x, y, z, x2, y2, z2]
 recipes_list = [a, b, c]
-

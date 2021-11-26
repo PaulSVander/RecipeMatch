@@ -1,6 +1,7 @@
 from data import recipes_list
 
 
+# Main recipes page where recipes can be edited or added
 def display():
     print('\n---------------------------\n')
     print("Here are the recipes in your book: \n")

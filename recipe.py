@@ -49,5 +49,3 @@ class Recipe:
 
     def print(self):
         print(str(self._id) + '.', self._name)
-
-
