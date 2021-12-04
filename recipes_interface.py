@@ -1,8 +1,10 @@
 from data import recipes_list
+from add_recipe_interface import display_add_recipe_interface
+from edit_recipe_interface import display_edit_recipe_interface
 
 
 # Main recipes page where recipes can be edited or added
-def display():
+def display_recipes_interface():
     print('\n---------------------------\n')
     print("Here are the recipes in your book: \n")
     print("0. Go Back\n")
@@ -14,11 +16,9 @@ def display():
     selection = input()
 
     if selection == '0':
-        from home import display
-        display()
+        from home import display_home
+        display_home()
     elif selection == 'new':
-        from add_recipe_interface import display
-        display()
+        display_add_recipe_interface()
     else:
-        from edit_recipe_interface import display
-        display(int(selection))
+        display_edit_recipe_interface(int(selection))

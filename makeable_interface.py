@@ -1,8 +1,7 @@
 from data import recipes_list
 
-
 # Displays a list of what recipes the user can make based on the ingredients they have on hand
-def display():
+def display_makeable_interface():
     print('\n---------------------------\n')
     print("Here's what you can make with your current ingredients: ")
     for recipe in recipes_list:
@@ -13,5 +12,5 @@ def display():
     selection = input()
 
     if selection == '0':
-        from home import display
-        display()
+        from home import display_home
+        display_home()

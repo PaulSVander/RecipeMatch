@@ -1,10 +1,11 @@
-# import edit_ingredient_interface
 import home
-# import ingredient
 from data import ingredients_list
+from edit_ingredient_interface import display_edit_ingredient_interface
+from add_ingredient_interface import display_add_ingredient_interface
+
 
 # Main ingredients interface to add or edit ingredients
-def display():
+def display_ingredients_interface():
     print('\n---------------------------\n')
     print("Here are the ingredients you have on hand: \n")
     print("0. Go Back\n")
@@ -16,10 +17,8 @@ def display():
     selection = input()
 
     if selection == '0':
-        home.display()
+        home.display_home()
     elif selection == 'new':
-        from add_ingredient_interface import display
-        display()
+        display_add_ingredient_interface()
     else:
-        from edit_ingredient_interface import display
-        display(selection)
+        display_edit_ingredient_interface(selection)
