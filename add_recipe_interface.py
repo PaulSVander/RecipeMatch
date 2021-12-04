@@ -6,20 +6,20 @@ import json
 import scraper_connection
 
 
-def display():
+def display_add_recipe_interface():
     print("\nAdding a new recipe")
     print("Enter the recipe name, or 'cancel' to cancel recipe entry")
     name = input("Recipe Name: ")
     if name == 'cancel':
-        recipes_interface.display()
+        recipes_interface.display_recipes_interface()
     new_recipe = recipe.Recipe(name)
     add_ingredients(new_recipe)
     recipes_list.append(new_recipe)
 
     image_request(new_recipe)
 
-    from recipes_interface import display
-    display()
+    from recipes_interface import display_recipes_interface
+    display_recipes_interface()
 
 # Add ingredients after selecting recipe name
 def add_ingredients(current_recipe):
@@ -35,7 +35,7 @@ def add_ingredients(current_recipe):
         if selection == 'done':
             break
         elif selection == 'cancel':
-            recipes_interface.display()
+            recipes_interface.display_recipes_interface()
         else:
             selection = int(selection)
         selected_ingredient = ingredients_list[selection - 1]
@@ -57,7 +57,7 @@ def image_request(recipe):
         image = retrieve_image(recipe.get_name())
         recipe.set_img_url(image)
 
-    recipes_interface.display()
+    recipes_interface.display_recipes_interface()
 
 # Utilizes image scraper microservice to find image for recipe
 def retrieve_image(recipe_name):

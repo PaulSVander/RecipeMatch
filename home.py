@@ -1,6 +1,10 @@
+from recipes_interface import display_recipes_interface
+from ingredients_interface import display_ingredients_interface
+from makeable_interface import display_makeable_interface
+
 
 # "home screen"
-def display():
+def display_home():
     print("Welcome to Recipe Match!\n\n")
     print("1. View/Edit my ingredients")
     print("2. View/Edit my recipes")
@@ -8,25 +12,10 @@ def display():
     print("4. Exit")
     selection = int(input("\nPlease select an option: "))
     if selection == 1:
-        view_ingredients()
+        display_ingredients_interface()
     elif selection == 2:
-        view_recipes()
+        display_recipes_interface()
     elif selection == 3:
-        view_makeable()
+        display_makeable_interface()
     elif selection == 4:
         quit()
-
-
-def view_ingredients():
-    from ingredients_interface import display
-    display()
-
-
-def view_recipes():
-    from recipes_interface import display
-    display()
-
-
-def view_makeable():
-    from makeable_interface import display
-    display()

@@ -1,4 +1,4 @@
 # Used to launch the app
 import home
 
-home.display()
+home.display_home()

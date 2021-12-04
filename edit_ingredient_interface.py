@@ -3,7 +3,7 @@ import data
 import ingredients_interface
 
 
-def display(ingredient_id):
+def display_edit_ingredient_interface(ingredient_id):
     print('\n---------------------------\n')
     print("Editing ingredient")
     ingredient_id = int(ingredient_id) - 1
@@ -34,12 +34,11 @@ def display(ingredient_id):
         print('1. Yes\n2. No')
         choice = input()
         if choice == '2':
-            display(int(ingredient_id) + 1)
+            display_edit_ingredient_interface(int(ingredient_id) + 1)
         data.ingredients_list.remove(current_ingredient)
         print("Ingredient deleted")
-        ingredients_interface.display()
+        ingredients_interface.display_ingredients_interface()
     elif selection == '0':
-        ingredients_interface.display()
+        ingredients_interface.display_ingredients_interface()
 
-    display(int(ingredient_id) + 1)
-
+    display_edit_ingredient_interface(int(ingredient_id) + 1)
