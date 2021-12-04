@@ -1,6 +1,5 @@
 from data import recipes_list
 from add_recipe_interface import display_add_recipe_interface
-from home import display_home
 from edit_recipe_interface import display_edit_recipe_interface
 
 
@@ -17,6 +16,7 @@ def display_recipes_interface():
     selection = input()
 
     if selection == '0':
+        from home import display_home
         display_home()
     elif selection == 'new':
         display_add_recipe_interface()
