@@ -1,6 +1,7 @@
 import home
 from data import ingredients_list
 from edit_ingredient_interface import display_edit_ingredient_interface
+from add_ingredient_interface import display_add_ingredient_interface
 
 
 # Main ingredients interface to add or edit ingredients
@@ -18,7 +19,6 @@ def display_ingredients_interface():
     if selection == '0':
         home.display_home()
     elif selection == 'new':
-        from add_ingredient_interface import display_add_ingredient_interface
         display_add_ingredient_interface()
     else:
         display_edit_ingredient_interface(selection)
